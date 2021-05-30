@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import {getRandomNums} from './services/RandomNumsService';
+import './components/RandomNumsForm';
+import RandomNumsForm from './components/RandomNumsForm';
 
 function App() {
+  const [data, setData] = useState([]);
+  /*
+  useEffect(() => {
+    const response = getRandomNums();
+
+    response.then(val => {
+      setData(val)
+      console.log(val)
+    })
+  }, []);*/
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RandomNumsForm/>
+      {
+        //data.map(val => (
+        //  <p>{val}</p>
+        //))
+      }
     </div>
   );
 }

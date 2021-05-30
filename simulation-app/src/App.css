@@ -1,5 +1,23 @@
 .App {
+  /*text-align: center;*/
+  margin: 5%;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: 
+    'pseudo pseudo nums'
+    'methods methods methods';
+}
+
+.PseudoForm {
+  grid-area: pseudo;
   text-align: center;
+  /*display:inline;*/
+}
+
+.RandomNums {
+  grid-area: nums;
 }
 
 .App-logo {
