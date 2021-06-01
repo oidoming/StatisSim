@@ -49,6 +49,7 @@ function RandomNumsForm() {
         });
     }
 
+    const [cls, setCls] = useState("");
     function handleSubmit(event) {
         event.preventDefault();
 
@@ -57,12 +58,13 @@ function RandomNumsForm() {
         response.then(val => {
             setData(val)
             setVisible(true);
+            setCls("container");
             console.log(val)
         })
     }
 
     return (
-        <div className="container">
+        <div className={cls}>
             <div className="PseudoForm">
                 <form autoComplete="off" onSubmit={handleSubmit} >
                     <TextField style={{margin: '15px'}} name="n" required label="Cantidad" variant="outlined" onChange={ handleInputChange } type="number" /><br/>
@@ -78,7 +80,7 @@ function RandomNumsForm() {
             {
                 data.length ? 
                 <div className="RandomNums">
-                    <FixedSizeList height={400} width={300} itemSize={46} itemCount={data.length} itemData={data}>
+                    <FixedSizeList className="FixedList" height={400} width={300} itemSize={46} itemCount={data.length} itemData={data}>
                         {renderRow}
                     </FixedSizeList>
                 </div> : null

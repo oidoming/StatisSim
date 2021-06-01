@@ -10,6 +10,13 @@
     'methods methods methods';
 }
 
+.item {
+  grid-area: item;
+  text-align: center;
+  max-width: 300px;
+  display: inline-block;
+}
+
 .PseudoForm {
   grid-area: pseudo;
   text-align: center;
@@ -18,6 +25,16 @@
 
 .RandomNums {
   grid-area: nums;
+}
+
+.FixedList {
+  background-color: rgb(154, 166, 167),
+}
+
+.MeansData {
+  text-align: left;
+  margin-left: 35%;
+  margin-right: 25%;
 }
 
 .App-logo {
