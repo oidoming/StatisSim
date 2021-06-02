@@ -37,6 +37,25 @@
   margin-right: 25%;
 }
 
+.NBAStats {
+  /*text-align: center;*/
+  margin: 5%;
+  display: grid;
+  grid-template-areas:
+    'title title' 
+    'form stats';
+}
+
+.StatsTitle {
+  text-align: center;
+  grid-area: title;
+}
+
+.StatsForm {
+  /*text-align: center;*/
+  grid-area: form;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

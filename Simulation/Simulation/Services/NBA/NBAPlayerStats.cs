@@ -87,12 +87,12 @@ namespace Simulation.Services.NBA
 
                     if (trinagle <= player.Ri[j])
                     {
-                        float x = abc[2] - ((float)Math.Sqrt((double)((abc[2] - abc[1])*(abc[2] - abc[0])*(1- player.Ri[j]))));
+                        float x = (float)Math.Round(abc[2] - ((float)Math.Sqrt((double)((abc[2] - abc[1]) * (abc[2] - abc[0]) * (1 - player.Ri[j])))), 1);
                         stats.Add(x);
                     }
                     else
                     {
-                        float x = abc[0] + ((float)Math.Sqrt((double)((abc[1] - abc[0]) * (abc[2] - abc[0]) * player.Ri[j])));
+                        float x = (float)Math.Round(abc[0] + ((float)Math.Sqrt((double)((abc[1] - abc[0]) * (abc[2] - abc[0]) * player.Ri[j]))), 1); ;
                         stats.Add(x);
                     }
                 }

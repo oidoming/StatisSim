@@ -28,7 +28,7 @@ function renderRow(props) {
     );
 }
 
-function RandomNumsForm() {
+function RandomNumsForm(props) {
     const classes = useStyles();
     const [visible, setVisible] = useState(false);
 
@@ -56,10 +56,11 @@ function RandomNumsForm() {
         const response = postRandomNums(pseudoFormulaData);
         
         response.then(val => {
-            setData(val)
+            setData(val);
             setVisible(true);
             setCls("container");
-            console.log(val)
+            console.log(val);
+            props.setRandomNums(val);
         })
     }
 
