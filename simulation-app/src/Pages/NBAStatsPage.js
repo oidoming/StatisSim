@@ -79,7 +79,10 @@ export default function NBAStatsPage({randomNums}) {
               <Button style={{margin: '15px'}} variant="contained" color="primary" type="submit">Enviar datos</Button>
           </form>
         </div>
+        <div>
         <NBAStatsTable statsData={DataResp.playersStats}/>
+        <h3>El mejor jugador es: {DataResp.bestPlayer}</h3>
+        </div>
       </div>
     );
 }

@@ -1,6 +1,7 @@
 ﻿using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,7 +11,7 @@ namespace Simulation.Services.ExcelOp
     {
         public static float ReadFile(double toFind)
         {
-            string path = @"C:\Users\Oscar\Downloads\Book (1).xlsx";
+            string path = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\")) + "Book (1).xlsx";
 
             SLDocument sl = new SLDocument(path);
             sl.SelectWorksheet("Sheet2");
