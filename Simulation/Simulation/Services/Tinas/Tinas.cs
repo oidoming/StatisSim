@@ -76,9 +76,17 @@ namespace Simulation.Services.Tinas
                 nSplit += 130;
                 year++;
             }
-
-            float average = costYear.Sum() / costYear.Count;
-            string decision = (average <= 5180.76) ? "Actual" : "Contratar nuevo"; // true continuar camion actual, false contratar nuevo
+            float average;
+            try
+            {
+                average = costYear.Sum() / costYear.Count;
+            }
+            catch (DivideByZeroException Ex)
+            {
+                average = 0;
+            }
+            //float average = (cost != 0) ? costYear.Sum() / costYear.Count : 0;
+            string decision = (average <= 5180.76) ? "Seguir utilizando los servicios de transporte" : "Contratar nuevos servicios de transporte"; // true continuar camion actual, false contratar nuevo
 
             return (tinasList, decision, average);
         }

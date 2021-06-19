@@ -33,6 +33,7 @@ export default function TinasPage({randomNums}) {
     return (
         <div className="Pi">
             <h2>Camion transportador</h2>
+            <p>Generar la cantidad de numeros pseudoaleatorios resultante de la formula (26*5)*numero de años a simular</p>
             <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                 <Button style={{margin: '15px'}} variant="contained" color="primary" type="submit">Calcular</Button>
             </form>

@@ -16,9 +16,10 @@ namespace Simulation.Services.Volados
             int tempBet = bet;
             int numOfWins = 0;
             int numOfLooses = 0;
-
+            int c = 0;
             foreach (float num in randomNums)
             {
+                c++;
                 bool won = (num < 0.5) ? true : false;
                 int afterVolado = (won == true) ? tempAvailable + tempBet : tempAvailable - tempBet;
                 bool reachedGoal = (afterVolado == goal) ? true : false;
@@ -36,11 +37,11 @@ namespace Simulation.Services.Volados
 
                 voladosInfos.Add(voladosInfo);
 
-                if (afterVolado == goal)
+                if (afterVolado == goal || (c == randomNums.Count && afterVolado == goal))
                 {
                     numOfWins += 1;
                 }
-                else if (afterVolado <= 0)
+                else if (afterVolado <= 0 || (c == randomNums.Count && afterVolado < goal))
                 {
                     numOfLooses += 1;
                 }
