@@ -8,6 +8,9 @@ import {
   Link
 } from "react-router-dom";
 import NBAStatsPage from './Pages/NBAStatsPage';
+import PiPage from './Pages/PiPage';
+import VoladosPage from './Pages/VoladosPage';
+import TinasPage from './Pages/TinasPage';
 import { useState } from 'react';
 
 function App() {
@@ -22,7 +25,13 @@ function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/nbastats">NBAStatsPage</Link>
+            <Link to="/pi">Pi</Link>
+          </li>
+          <li>
+            <Link to="/volados">Volados</Link>
+          </li>
+          <li>
+            <Link to="/tinas">Tinas</Link>
           </li>
         </ul>
 
@@ -41,8 +50,14 @@ function App() {
             <RandomNumsForm setRandomNums={setRandomNums}/>
           </div>
           </Route>
-          <Route path="/nbastats">
-            <NBAStatsPage randomNums={randomNums}/>
+          <Route path="/pi">
+            <PiPage randomNums={randomNums}/>
+          </Route>
+          <Route path="/volados">
+            <VoladosPage randomNums={randomNums}/>
+          </Route>
+          <Route path="/tinas">
+            <TinasPage randomNums={randomNums}/>
           </Route>
         </Switch>
       </div>

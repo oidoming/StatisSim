@@ -23,7 +23,7 @@ function renderRow(props) {
   
     return (
       <ListItem button style={style} key={index}>
-        <ListItemText primary={`Item ${data[index]}`} />
+        <ListItemText primary={`${data[index]}`} />
       </ListItem>
     );
 }

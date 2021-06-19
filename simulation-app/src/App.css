@@ -56,6 +56,14 @@
   grid-area: form;
 }
 
+
+.Pi {
+  /*text-align: center;*/
+  margin: 5%;
+  margin-top: 12px;
+  text-align: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
